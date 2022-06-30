@@ -1,6 +1,6 @@
 package com.qa.garage;
 
-public class Vehicle {
+public abstract class Vehicle {
 
 	private int wheels;
 	private boolean hasDoors;

@@ -80,4 +80,8 @@ public class Garage {
 			System.out.println(found.getColour() + " " + found.getManufacturer());
 		}
 	}
+
+	public void emptyGarage() {
+		garage.clear();
+	}
 }
