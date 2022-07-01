@@ -8,7 +8,7 @@ public class Garage {
 	int vanCost = 300;
 	int bikeCost = 100;
 	int cost;
-
+	int count = 0;
 	private ArrayList<Vehicle> garage = new ArrayList<>();
 
 	// method to add a specific vehicle to the arrayList
@@ -47,8 +47,19 @@ public class Garage {
 
 	}
 
-	// methods to remove all vehicles of a given type
+	// method to remove all vehicles of a given type
 	// Iterating over a clone of the array, to not break the enhanced for loop.
+	public void removeVehicle(String type) {
+		ArrayList<Vehicle> toRemove = new ArrayList<>();
+		for (Vehicle v : this.garage) {
+			if (v.getClass().getSimpleName().equalsIgnoreCase(type)) {
+				toRemove.add(v);
+			}
+		}
+		this.garage.removeAll(toRemove);
+	}
+
+	// methods to remove all vehicles of a specific type taking no input
 	public void removeAllCars() {
 		for (Vehicle v : new ArrayList<>(garage)) {
 			if (v instanceof Car) {
@@ -81,6 +92,7 @@ public class Garage {
 		}
 	}
 
+	// method to clear the garage by removing all vehicles held
 	public void emptyGarage() {
 		garage.clear();
 	}
