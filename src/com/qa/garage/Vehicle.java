@@ -7,6 +7,8 @@ public abstract class Vehicle {
 	private float engineSize;
 	private String colour;
 	private String manufacturer;
+	private int id = 1;
+	private static int count;
 
 	public Vehicle(int wheels, boolean hasDoors, float engineSize, String colour, String manufacturer) {
 		super();
@@ -15,6 +17,8 @@ public abstract class Vehicle {
 		this.engineSize = engineSize;
 		this.colour = colour;
 		this.manufacturer = manufacturer;
+		id = count;
+		count++;
 	}
 
 	public int getWheels() {
@@ -55,6 +59,22 @@ public abstract class Vehicle {
 
 	public void setManufacturer(String manufacturer) {
 		this.manufacturer = manufacturer;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public static int getCount() {
+		return count;
+	}
+
+	public static void setCount(int count) {
+		Vehicle.count = count;
 	}
 
 }
